@@ -57,7 +57,7 @@ class Mercado {
         this.agregarProveedor = function (nombre, productos, ubicacion) {
             let yaExiste = false;
             for (let i = 0; i < _proveedores.length && !yaExiste; i++) {
-                if (_proveedores[i].getNombre == nombre) yaExiste = true;
+                if (_proveedores[i].getNombre() == nombre) yaExiste = true;
             }
             if (!yaExiste)
                 _proveedores.push(
@@ -79,7 +79,7 @@ class Mercado {
                     indice = i;
                 }
             }
-            if (indice > -1) _proveedores.splice(indice, 1);
+            if (indice != -1) _proveedores.splice(indice, 1);
         };
 
         /*
